@@ -1,53 +1,45 @@
+import java.lang.String;
 public class Address{
     //fields
-    int zipCode;
-    String country;
-    String city;
-    String email;
+    private String zipCode;
+    private String country;
+    private String city;
+    private String email;
 
-    public Address(int zipCode, String country, String city, String email) {
-        this.zipCode = zipCode;
-        this.country = country;
-        this.city = city;
-        this.email = email;
-    }
 
-    public int getZipCode() {
-        return zipCode;
-    }
 
-    public void setZipCode(int zipCode) {
-        this.zipCode = zipCode;
-    }
-
-    public String getCountry() {
-        return country;
+    public void setZipCode(String zipCode) {
+        if (zipCode.equals("")) {
+            this.zipCode = "(not saved)";
+        }
+        else {
+            this.zipCode = zipCode;
+        }
     }
 
     public void setCountry(String country) {
-        this.country = country;
-    }
-
-    public String getCity() {
-        return city;
+        if (country.equals("")) {
+            this.country = "(not saved)";
+        }
+        else {
+            this.country = country;
+        }
     }
 
     public void setCity(String city) {
-        this.city = city;
+        if (city.equals("")) {
+            this.city = "(not saved)";
+        }
+        else {
+            this.city = city;
+        }
     }
 
-    public String getEmail() {
-        return email;
+
+    public String toString() {
+        return "Address: " + zipCode + " - " + country + " - " + city;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void stringToString(){
-        System.out.println("Zip code :"+ zipCode +
-                            "Country :"+ country +
-                            "City : " + city +
-                            "Email : "+ email);
-    }
 }
+
+
